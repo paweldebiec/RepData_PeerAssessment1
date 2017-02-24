@@ -162,7 +162,8 @@ ggplot(data= steps_per_interval, aes(interval, avg)) + geom_line() + ggtitle(&qu
 <div id="imputing-missing-values" class="section level2">
 <h2>Imputing missing values</h2>
 <p>As we know there are some observations with NAs (in steps column), let’s check how many NAs is there in entire activity dataset</p>
-<p>‘’’{r} sum(is.na(activity)) ```</p>
+<pre class="r"><code>sum(is.na(activity))</code></pre>
+<pre><code>## [1] 2304</code></pre>
 <p>Let’s create a new dataset in which we imput the missing steps values with the mean value for corresponding interval from other days.</p>
 <pre class="r"><code>activity.imputed &lt;- data.frame(activity %&gt;% group_by(interval) %&gt;% mutate( steps = impute(steps, mean)))</code></pre>
 <p>Now let’s draw a histogram for total steps by day for this imputed dataset</p>

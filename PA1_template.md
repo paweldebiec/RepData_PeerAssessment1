@@ -78,8 +78,13 @@ data.frame(steps_per_interval[which.max(steps_per_interval$avg),])
 ##Imputing missing values
 As we know there are some observations with NAs (in steps column), let's check how many NAs is there in entire activity dataset
 
-'''{r}
+
+```r
 sum(is.na(activity))
+```
+
+```
+## [1] 2304
 ```
 
 Let's create a new dataset in which we imput the missing steps values with the mean value for corresponding interval from other days. 
@@ -95,7 +100,7 @@ steps_per_day_imputed <- activity.imputed %>% group_by(date) %>% summarise(total
 hist(steps_per_day_imputed$total, breaks = 10, col = "grey", xlab= "# Steps per day", main = "Histogram of Steps per Day with missing values imputed")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 
 
 Let's see how the mean and median changed vs original dataset
@@ -139,7 +144,7 @@ ggplot(avg_week, aes(x=interval, y=avg)) + geom_line() + ylab("Number of steps")
 ggtitle("Average number of steps in intervals in weekdays and weekend")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
 
 
 

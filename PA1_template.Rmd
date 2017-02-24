@@ -60,7 +60,7 @@ data.frame(steps_per_interval[which.max(steps_per_interval$avg),])
 ##Imputing missing values
 As we know there are some observations with NAs (in steps column), let's check how many NAs is there in entire activity dataset
 
-'''{r}
+```{r}
 sum(is.na(activity))
 ```
 
