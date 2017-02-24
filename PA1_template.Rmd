@@ -4,6 +4,7 @@ author: "Pawe³‚ Dêbiec"
 date: "23.02.2017"
 output: 
   html_document: 
+    fig_caption: yes
     keep_md: yes
 ---
 
